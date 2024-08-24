@@ -34,6 +34,9 @@ android {
 
 dependencies {
 
+    implementation(project(":common:domain"))
+    implementation(project(":common:framework"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
