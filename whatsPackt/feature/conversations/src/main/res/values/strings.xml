@@ -1,0 +1,6 @@
+<resources>
+    <string name="conversations_list_title">Your chats</string>
+    <string name="conversations_tab_status_title">Status</string>
+    <string name="conversations_tab_chats_title">Chats</string>
+    <string name="conversations_tab_calls_title">Calls</string>
+</resources>
