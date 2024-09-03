@@ -1,13 +1,10 @@
 package com.asensiodev.whatspackt
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.asensiodev.whatspackt.ui.navigation.MainNavigation
 import com.asensiodev.whatspackt.ui.theme.WhatsPacktTheme
@@ -17,6 +14,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                window.isNavigationBarContrastEnforced = false
+            }
             WhatsPacktTheme {
                 val navHostController = rememberNavController()
                 MainNavigation(navController = navHostController)
