@@ -48,6 +48,7 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
@@ -58,6 +59,7 @@ dependencies {
     implementation(project(":feature:conversations"))
     implementation(project(":feature:create_chat"))
     implementation(project(":common:framework"))
+    implementation(project(":common:data"))
 
     implementation(libs.dagger.hilt)
     implementation(libs.kapt)
