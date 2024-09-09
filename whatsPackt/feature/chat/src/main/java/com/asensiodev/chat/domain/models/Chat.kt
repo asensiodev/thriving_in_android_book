@@ -1,4 +1,4 @@
-package com.asensiodev.chat.models
+package com.asensiodev.chat.domain.models
 
 data class Chat (
     val id: String,
