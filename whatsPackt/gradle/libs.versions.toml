@@ -33,11 +33,13 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion"}
 kapt = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 ktor-client-websockets = {group = "io.ktor", name = "ktor-client-websockets", version.ref = "ktorVersion"}
 ktor-client-okhttp = {group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktorVersion"}
+ktor-serialization-kotlinx = {group = "io.ktor", name = "ktor-serialization-kotlinx", version.ref = "ktorVersion"}
 
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navCompose" }
