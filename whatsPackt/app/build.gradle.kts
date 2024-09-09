@@ -63,12 +63,12 @@ dependencies {
 
     // Hilt
     implementation(libs.dagger.hilt)
+    implementation(libs.dagger.hilt.compiler)
 
     // Ktor
     implementation(libs.ktor.client.websockets)
     implementation(libs.ktor.client.okhttp)
 
-    implementation(libs.kapt)
     implementation(libs.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
