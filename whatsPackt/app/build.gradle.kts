@@ -61,7 +61,13 @@ dependencies {
     implementation(project(":common:framework"))
     implementation(project(":common:data"))
 
+    // Hilt
     implementation(libs.dagger.hilt)
+
+    // Ktor
+    implementation(libs.ktor.client.websockets)
+    implementation(libs.ktor.client.okhttp)
+
     implementation(libs.kapt)
     implementation(libs.navigation.compose)
 
