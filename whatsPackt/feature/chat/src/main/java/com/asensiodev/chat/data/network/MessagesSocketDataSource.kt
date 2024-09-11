@@ -11,23 +11,25 @@ import io.ktor.websocket.Frame
 import io.ktor.websocket.close
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.receiveAsFlow
 import javax.inject.Inject
-
 
 class MessagesSocketDataSource @Inject constructor(
     private val httpClient: HttpClient
 ) {
     private lateinit var webSocketSession: DefaultWebSocketSession
 
-    suspend fun connect(url: String): Flow<Unit> {
-        return httpClient.webSocketSession { url(url) }
-            .apply { webSocketSession = this }
-            .incoming
-            .receiveAsFlow()
-            .map { frame -> webSocketSession.handleMesage(frame) }
-            .filterNotNull().map { it.toDomain() }
+    suspend fun connect(url: String): Flow<Message> {
+        return flow {
+            httpClient.webSocketSession { url(url) }
+                .apply { webSocketSession = this }
+                .incoming
+                .receiveAsFlow()
+                .map { frame -> webSocketSession.handleMesage(frame) }
+                .filterNotNull().map { it.toDomain() }
+        }
     }
 
     suspend fun sendMessage(message: Message) {
