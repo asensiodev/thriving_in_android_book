@@ -49,6 +49,7 @@ dependencies {
     // Hilt
     implementation(libs.dagger.hilt)
     implementation(libs.dagger.hilt.compiler)
+    implementation(libs.dagger.hilt.nav.compose)
 
     // Ktor
     implementation(libs.ktor.client.websockets)
