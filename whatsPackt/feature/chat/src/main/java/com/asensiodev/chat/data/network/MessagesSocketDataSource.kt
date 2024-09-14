@@ -27,7 +27,7 @@ class MessagesSocketDataSource @Inject constructor(
                 .apply { webSocketSession = this }
                 .incoming
                 .receiveAsFlow()
-                .map { frame -> webSocketSession.handleMesage(frame) }
+                .map { frame -> webSocketSession.handleMessage(frame) }
                 .filterNotNull().map { it.toDomain() }
         }
     }
