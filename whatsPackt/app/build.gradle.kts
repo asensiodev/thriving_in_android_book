@@ -61,8 +61,14 @@ dependencies {
     implementation(project(":common:framework"))
     implementation(project(":common:data"))
 
+    // Hilt
     implementation(libs.dagger.hilt)
-    implementation(libs.kapt)
+    implementation(libs.dagger.hilt.compiler)
+
+    // Ktor
+    implementation(libs.ktor.client.websockets)
+    implementation(libs.ktor.client.okhttp)
+
     implementation(libs.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
