@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.kotlin.x.serialization)
     kotlin("kapt")
     alias(libs.plugins.hilt.android)
 }
@@ -54,6 +53,7 @@ dependencies {
     // Ktor
     implementation(libs.ktor.client.websockets)
     implementation(libs.ktor.client.okhttp)
+    implementation(libs.ktor.client.negotiation)
 
     // Kotlinx ktor serialization
     implementation(libs.ktor.serialization.kotlinx)

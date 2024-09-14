@@ -13,7 +13,7 @@ material = "1.10.0"
 hilt = "2.48"
 hiltNavCompose = "1.2.0"
 navCompose = "2.8.0-rc01"
-kotlinxSerialization = "1.6.3"
+kotlinxSerialization = "1.5.0"
 coilVersion = "2.7.0"
 ktorVersion = "2.2.4"
 
@@ -36,12 +36,13 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 dagger-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 dagger-hilt-nav-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavCompose" }
-coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion"}
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion" }
 kapt = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
-ktor-client-websockets = {group = "io.ktor", name = "ktor-client-websockets", version.ref = "ktorVersion"}
-ktor-client-okhttp = {group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktorVersion"}
-ktor-serialization-kotlinx = {group = "io.ktor", name = "ktor-serialization-kotlinx", version.ref = "ktorVersion"}
+ktor-client-websockets = { group = "io.ktor", name = "ktor-client-websockets", version.ref = "ktorVersion" }
+ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktorVersion" }
+ktor-client-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktorVersion" }
+ktor-serialization-kotlinx = { group = "io.ktor", name = "ktor-serialization-kotlinx", version.ref = "ktorVersion" }
 
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navCompose" }
