@@ -30,11 +30,10 @@ class ChatViewModel @Inject constructor(
     private var messageCollectionJob: Job? = null
 
     fun loadAndUpdateMessages() {
-        // review page 67
         messageCollectionJob = viewModelScope.launch(Dispatchers.IO) {
             retrieveMessages()
                 .map { it.toUI() }
-                .collect { message -> _messages.value = _messages.value + message }
+                .collect { message -> _messages.value += message }
         }
     }
 
@@ -61,13 +60,22 @@ class ChatViewModel @Inject constructor(
 
     fun onSendMessage(messageText: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val message = Message(messageText)
+            val message = DomainMessage(
+                senderAvatar = "",
+                senderName = "",
+                isMine = true,
+                contentType = DomainMessage.ContentType.TEXT,
+                content = messageText,
+                contentDescription = messageText
+            )
             sendMessage(message)
         }
     }
 
     override fun onCleared() {
         messageCollectionJob?.cancel()
-        viewModelScope.launch(Dispatchers.IO) { disconnectMessages() }
+        viewModelScope.launch(Dispatchers.IO) {
+            disconnectMessages()
+        }
     }
 }

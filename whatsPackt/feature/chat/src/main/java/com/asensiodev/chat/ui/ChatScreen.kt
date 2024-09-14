@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -43,6 +44,8 @@ fun ChatScreen(
     chatId: String?,
     onBack: () -> Unit
 ) {
+    val messages by viewModel.messages.collectAsState()
+
     LaunchedEffect(Unit) {
         viewModel.loadAndUpdateMessages()
     }
@@ -57,12 +60,12 @@ fun ChatScreen(
             SendMessageBox() { viewModel.onSendMessage(it) }
         }
     ) { innerPadding ->
-        ListOfMessages(paddingValues = innerPadding)
+        ListOfMessages(messages, paddingValues = innerPadding)
     }
 }
 
 @Composable
-fun ListOfMessages(paddingValues: PaddingValues, messages: List<Message>) {
+fun ListOfMessages(messages: List<Message>, paddingValues: PaddingValues) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -77,7 +80,7 @@ fun ListOfMessages(paddingValues: PaddingValues, messages: List<Message>) {
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(messages) { message ->
+                items(messages.size) { message ->
                     MessageItem(message = message)
                 }
             }
